@@ -8,6 +8,9 @@ header.cabeçalho {
     text-align: center;
     font-size: 24px;
     font-weight: bold;
+    box-sizing: border-box;
+    min-height: 100vh;
+    border-bottom: 25px solid #002707;
 }
 header.cabeçalho h1 {
     color: #ffffff71;
@@ -21,7 +24,7 @@ header.cabeçalho h2 {
     text-align: center;
 }
 nav#menu ol {
-   list-style: none;
+    list-style: none;
     text-transform: uppercase;
     position: absolute;
     top: 0px;
