@@ -10,7 +10,14 @@ header.cabeçalho {
     font-weight: bold;
     box-sizing: border-box;
     min-height: 100vh;
-    border-bottom: 25px solid #002707;
+    border-bottom: 15px solid #007516;
+}
+#titulo-principal {
+    transition: transform 0.2s ease;
+}
+
+#titulo-principal:hover {
+    transform: scale(1.1);
 }
 header.cabeçalho h1 {
     color: #ffffff71;
@@ -23,6 +30,9 @@ header.cabeçalho h2 {
     margin: 80px 0 0 0;
     text-align: center;
 }
+
+/* Menu de navegação */
+
 nav#menu ol {
     list-style: none;
     text-transform: uppercase;
@@ -51,6 +61,9 @@ nav#menu ol a::after {
 nav#menu ol a:hover::after {
     width: 100%;
 }
+
+/* Estilo para o logo */
+
 img.logo {
     position: absolute;
     top: 10px;
@@ -58,4 +71,31 @@ img.logo {
     transform: translateX(-50%);
     width:10%;
     height: auto;
+}
+
+/*Estilo do Conteúdo*/
+article#conteudo1 {
+    border-top: 50px solid #002707;
+}
+/* Descriçaõ do clube */
+
+img#logo1 {
+    display: block;
+    width: 160px;
+    max-width: 40%;
+    height: auto;
+    margin: 30px auto 30px 20px;
+}
+/* Estilo para o Instagram */
+img.instagram {
+    position: absolute;
+    top: 150px;
+    right: 40px;
+    transition: transform 0.2s;
+    width: 5%;
+    height: auto;
+}
+img.instagram:hover {
+    transform: scale(1.1);
+    transition: transform 0.2s ease;
 }
