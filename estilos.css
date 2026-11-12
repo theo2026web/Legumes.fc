@@ -74,18 +74,102 @@ img.logo {
 }
 
 /*Estilo do Conteúdo*/
-article#conteudo1 {
-    border-top: 50px solid #002707;
-}
+
 /* Descriçaõ do clube */
+
+article#conteudo1 > .texto {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    column-gap: 32px;
+    align-items: start;
+    background: linear-gradient(to bottom, #103819 0%, #4f9662 24%, #b8dfbf 62%, #f2faf3 100%);
+}
+
+.texto figure {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin: 0;
+}
 
 img#logo1 {
     display: block;
     width: 160px;
     max-width: 40%;
     height: auto;
-    margin: 30px auto 30px 20px;
+    margin: 30px 0 30px 20px;
 }
+h3.cores {
+    text-transform: uppercase;
+    margin-left: 20px;
+}
+span#verde {
+    color: #007516;
+    font-weight: bold;
+}
+span#laranja {
+    color: #ff640a;
+    font-weight: bold;
+}
+span#azul {
+    color: #0000ff;
+    font-weight: bold;
+}
+h1#nome-clube {
+    font-size: 36px;
+    font-weight: bold;
+    margin: 0;
+    color: #ffffff;
+    text-shadow: 0 2px 8px rgba(0, 30, 10, 0.35);
+}
+h2.lema {
+    text-transform: uppercase;
+    font-size: 24px;
+    margin-left: 20px;
+}
+/* Estilo para a seção de história */
+
+.historia {
+    background: transparent;
+    width: 100%;
+    grid-column: 2;
+    grid-row: 1 / span 3;
+    margin: 0;
+    padding: 24px;
+    box-sizing: border-box;
+}
+
+.historia summary {
+    display: inline-block;
+    padding: 12px 20px;
+    background-color: #174b2b;
+    color: #ffffff;
+    font-weight: bold;
+    cursor: pointer;
+}
+.historia summary::after { content: " ↓"; }
+.historia[open] summary::after { content: " ↑"; }
+
+.historia p {
+    color: #000000;
+    line-height: 1.7;
+    font-size: 20px;
+}
+
+
+@media (max-width: 700px) {
+    article#conteudo1 > .texto {
+        display: block;
+    }
+    .historia {
+        width: 100%;
+        padding: 20px;
+    }
+    .texto figure {
+        gap: 12px;
+    }
+}
+
 /* Estilo para o Instagram */
 img.instagram {
     position: absolute;
@@ -98,4 +182,13 @@ img.instagram {
 img.instagram:hover {
     transform: scale(1.1);
     transition: transform 0.2s ease;
+}
+footer.rodape {
+    background-color: #ffffff;
+    color: #000000;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    width: 100%;
+    border-top: 15px solid #00b421;
 }
