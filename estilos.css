@@ -307,6 +307,40 @@ figure.fotoPessoa figcaption {
     padding-top: 8px;
     line-height: 1.5;
 }
+.fotoPessoa {
+    position: relative;
+}
+
+
+.fotoPessoa img {
+    width: 100%;
+    display: block;
+}
+
+.fotoPessoa .foto-hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 120%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+figure.fotoPessoa .foto-hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+
+.fotoPessoa:hover .foto-hover {
+    opacity: 1;
+}
+
+.fotoPessoa:hover .foto-principal {
+    opacity: 0;
+}
 .noticia figcaption > strong {
     display: block;
     margin-bottom: 8px;
