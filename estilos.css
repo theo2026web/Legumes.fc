@@ -12,7 +12,6 @@ header.cabeçalho {
     background-position: center;
     background-repeat: no-repeat;
     text-align: center;
-    border-bottom: 8px solid #007516;
 }
 header.cabeçalho hgroup {
     max-width: 900px;
@@ -491,4 +490,63 @@ h3.nome-jogador {
     text-align: center;
     font-size: 20px;
     margin: 5px 0;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+.treinos {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.treinos li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    width: 100%;
+    font-size: 40px;
+    margin-left: 160px;
+    width: calc(100% - 160px);
+}
+
+.titulo-treino {
+    display: inline-block;
+    padding-bottom: 6px;
+    border-bottom: 2px solid currentColor;
+}
+
+.video-treino {
+    display: block;
+    width: 50%;
+    max-width: 560px;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    flex-shrink: 0;
+}
+
+@media (max-width: 700px) {
+    .treinos li {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .video-treino {
+        width: 100%;
+    }
+}
+h2#titulo-treino {
+    text-align: center;
+    font-size: 28px;
+    margin: 20px 0px 40px 0px;
 }
