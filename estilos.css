@@ -1,15 +1,22 @@
 header.cabeçalho {
-    background: url("imagens/fundo.png");
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 390px;
+    padding: 120px 24px 80px;
+    box-sizing: border-box;
+    background-image: linear-gradient(rgba(7, 35, 15, 0.68), rgba(7, 35, 15, 0.48)), url("imagens/fundo.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    padding: 20%;
     text-align: center;
-    font-size: 24px;
-    font-weight: bold;
-    box-sizing: border-box;
-    min-height: 100vh;
-    border-bottom: 15px solid #007516;
+    border-bottom: 8px solid #007516;
+}
+header.cabeçalho hgroup {
+    max-width: 900px;
+    margin: 0;
 }
 #titulo-principal {
     transition: transform 0.2s ease;
@@ -19,31 +26,57 @@ header.cabeçalho {
     transform: scale(1.1);
 }
 header.cabeçalho h1 {
-    color: #ffffff71;
-    font-size: 60px;
-    margin: -150px 0 0 0;
+    color: #ffffff;
+    font-size: clamp(36px, 6vw, 68px);
+    line-height: 1.05;
+    margin: 0;
+    text-shadow: 0 3px 12px rgba(0, 0, 0, 0.55);
 }
 header.cabeçalho h2 {
-    color: #ff640a;
-    font-size: 36px;
-    margin: 80px 0 0 0;
+    color: #ff8540;
+    font-size: clamp(18px, 3vw, 30px);
+    line-height: 1.35;
+    margin: 16px 0 0;
     text-align: center;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
 }
 
 /* Menu de navegação */
 
+nav#menu {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
 nav#menu ol {
+    display: flex;
+    align-items: center;
+    gap: 4px;
     list-style: none;
     text-transform: uppercase;
-    position: absolute;
-    top: 0px;
-    right: 60px;
+    margin: 0;
+    padding: 7px;
+    border: 1px solid rgba(255, 255, 255, 0.24);
+    border-radius: 999px;
+    background: rgba(7, 35, 15, 0.62);
+    backdrop-filter: blur(8px);
 }
 nav#menu ol a {
     position: relative;
     display: inline-block;
-    color: white;
+    padding: 9px 12px;
+    border-radius: 999px;
+    color: #ffffff;
+    font-size: 14px;
+    transition: background-color 0.2s ease;
     text-decoration: none;
+}
+nav#menu ol a:hover {
+    background-color: rgba(255, 255, 255, 0.12);
 }
 nav#menu ol a::after {
     content: '';
@@ -65,11 +98,70 @@ nav#menu ol a:hover::after {
 
 img.logo {
     position: absolute;
-    top: 10px;
-    left: 80px;
-    transform: translateX(-50%);
-    width:10%;
+    top: 18px;
+    left: 24px;
+    z-index: 3;
+    width: clamp(64px, 8vw, 96px);
     height: auto;
+}
+
+@media (max-width: 700px) {
+    header.cabeçalho{
+        min-height: 350px;
+        padding: 140px 20px 70px;
+    }
+    img.logo {
+        top: 14px;
+        left: 16px;
+        width: 62px;
+    }
+    nav#menu {
+        top: 12px;
+        right: 12px;
+        left: 90px;
+        justify-content: flex-end;
+    }
+    nav#menu ol {
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        gap: 2px;
+        padding: 5px;
+    }
+    nav#menu ol a {
+        padding: 8px;
+        font-size: 12px;
+    }
+    header.cabeçalho nav#menu h3#branco {
+        display: none;
+    }
+}
+
+@media (max-width: 450px) {
+    header.cabeçalho {
+        min-height: 370px;
+        padding: 160px 16px 70px;
+    }
+    img.logo {
+        top: 10px;
+        left: 50%;
+        width: 54px;
+        transform: translateX(-50%);
+    }
+    nav#menu {
+        top: 72px;
+        right: 10px;
+        left: 10px;
+        justify-content: center;
+    }
+    nav#menu h3#branco {
+        margin: 0;
+        color: #ffffff;
+        font-size: 12px;
+        white-space: nowrap;
+    }
+    nav#menu ol {
+        justify-content: center;
+    }
 }
 
 /*Estilo do Conteúdo*/
@@ -184,15 +276,22 @@ span.historia {
 /* Estilo para o Instagram */
 img.instagram {
     position: absolute;
-    top: 150px;
-    right: 40px;
+    right: 24px;
+    bottom: 18px;
     transition: transform 0.2s;
-    width: 5%;
+    width: 50px;
     height: auto;
 }
 img.instagram:hover {
     transform: scale(1.1);
     transition: transform 0.2s ease;
+}
+@media (max-width: 700px) {
+    img.instagram {
+        right: 16px;
+        bottom: 14px;
+        width: 30px;
+    }
 }
 footer.rodape {
     background-color: #ffffff;
@@ -204,9 +303,6 @@ footer.rodape {
     border-top: 15px solid #00b421;
 }
 /*Noticias*/
-article#noticia-card{
-    background: linear-gradient(to bottom, #103819 0%, #4f9662 24%, #b8dfbf 62%, #ffffff calc(100% - 8px), #ffffff 100%);
-}
 .noticias-grade {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -280,66 +376,96 @@ article#noticia-card{
     }
 }
 .galeria-pessoas {
-    text-align: center;
-}
-figure.fotoPessoa {
-    display: inline-grid;
-    grid-template-columns: 220px;
-    grid-template-rows: 270px auto;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
     justify-items: center;
-    vertical-align: top;
-    margin: 10px;
-    padding: 10px;
 }
-figure.fotoPessoa img {
-    grid-column: 1;
-    grid-row: 1;
-    width: 200px;
-    height: 250px;
+
+figure.fotoPessoa {
+    display: grid;
+    grid-template-rows: auto 275px auto;
+    justify-items: center;
+    width: 100%;
+    max-width: 240px;
+    margin: 0;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.foto-flip {
+    position: relative;
+    width: 220px;
+    height: 275px;
+    perspective: 1000px;
+    grid-row: 2;
+}
+
+.numero-jogador {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 2;
+    display: grid;
+    place-items: center;
+    width: 48px;
+    height: 48px;
+    color: #103819;
+    font-family: Arial, sans-serif;
+    font-size: 21px;
+    font-style: italic;
+    font-weight: 900;
+    box-sizing: border-box;
+    backface-visibility: hidden;
+}
+
+.foto-flip-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.8s;
+}
+
+.fotoPessoa:hover .foto-flip-inner {
+    transform: rotateY(180deg);
+}
+
+.foto-flip img {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     border-radius: 16px;
-    transition: width 1s, height 1s, opacity 1s;
+    backface-visibility: hidden;
+}
+
+.foto-flip .foto-hover {
+    transform: rotateY(180deg);
 }
 
 figure.fotoPessoa figcaption {
-    grid-column: 1;
-    grid-row: 2;
+    grid-row: 3;
     padding-top: 8px;
     line-height: 1.5;
-}
-.fotoPessoa {
-    position: relative;
-}
-
-
-.fotoPessoa img {
-    width: 100%;
-    display: block;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
-.fotoPessoa .foto-hover {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 120%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-figure.fotoPessoa .foto-hover {
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
+@media (max-width: 700px) {
+    .galeria-pessoas {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
 }
 
-.fotoPessoa:hover .foto-hover {
-    opacity: 1;
-}
-
-.fotoPessoa:hover .foto-principal {
-    opacity: 0;
+@media (max-width: 450px) {
+    .galeria-pessoas {
+        grid-template-columns: 1fr;
+    }
 }
 .noticia figcaption > strong {
     display: block;
@@ -350,4 +476,19 @@ figure.fotoPessoa .foto-hover {
 p.noticia-texto {
     text-align: justify;
     
+}
+h3#branco{
+    text-align: center;
+    color: #eeeeee;
+}
+article#conteudo {
+    background: linear-gradient(to bottom, #103819 0%, #4f9662 24%, #b8dfbf 62%, #ffffff calc(100% - 8px), #ffffff 100%);
+    padding: 20px;
+    box-sizing: border-box;
+    min-height: 100vh;
+}
+h3.nome-jogador {
+    text-align: center;
+    font-size: 20px;
+    margin: 5px 0;
 }
