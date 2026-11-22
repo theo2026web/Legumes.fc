@@ -550,3 +550,164 @@ h2#titulo-treino {
     font-size: 28px;
     margin: 20px 0px 40px 0px;
 }
+
+/* ===== PALETA MODERNA DO SITE ===== */
+
+/* Fonte geral */
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Cabeçalho e navegação em todas as páginas */
+header.cabeçalho {
+    background-image: linear-gradient(rgba(18, 53, 35, 0.76), rgba(18, 53, 35, 0.58)), url("imagens/fundo.png");
+}
+
+header.cabeçalho h1 {
+    letter-spacing: 0.035em;
+}
+
+header.cabeçalho h2 {
+    color: #ffc078;
+}
+
+nav#menu ol {
+    background: rgba(18, 53, 35, 0.78);
+    border-color: rgba(244, 239, 228, 0.35);
+}
+
+nav#menu ol a::after {
+    background-color: #df7139;
+}
+
+/* Página inicial */
+article#conteudo1 > .texto {
+    background: linear-gradient(135deg, #e6efe5 0%, #f4efe4 100%);
+    color: #294536;
+    line-height: 1.6;
+}
+
+h1#nome-clube {
+    color: #174b32;
+    text-shadow: none;
+}
+
+h2.lema,
+h3.cores {
+    color: #294536;
+}
+
+span#verde {
+    color: #34734a;
+}
+
+span#laranja {
+    color: #c85e2d;
+}
+
+span#azul {
+    color: #587b8b;
+}
+
+details.historia {
+    background-color: rgba(88, 123, 139, 0.1);
+    border-left: 4px solid #587b8b;
+    border-radius: 8px;
+}
+
+details.historia a {
+    color: #587b8b;
+}
+
+details.historia a:hover {
+    color: #c85e2d;
+}
+
+details.historia summary {
+    background-color: #245c3d;
+}
+
+details.historia summary:hover {
+    background-color: #c85e2d;
+}
+
+details.historia p {
+    color: #294536;
+}
+
+/* Rodapé em todas as páginas */
+footer.rodape {
+    background-color: #f4efe4;
+    color: #294536;
+    border-top-color: #df7139;
+}
+
+/* Conteúdo das páginas internas */
+article#conteudo .historia {
+    display: block;
+    margin-bottom: 24px;
+    padding: 20px;
+    background-color: #e2efe1;
+    border-left: 4px solid #34734a;
+    border-radius: 8px;
+    color: #294536;
+    line-height: 1.6;
+}
+
+article#conteudo .historia h1 {
+    margin-bottom: 8px;
+    color: #174b32;
+    font-size: clamp(24px, 4vw, 36px);
+}
+
+article#conteudo .historia h3 {
+    color: #294536;
+    font-size: 17px;
+}
+
+/* Notícias */
+.noticias-grade .noticia {
+    border: 1px solid rgba(52, 115, 74, 0.35);
+    border-radius: 12px;
+    background-color: #edf4ec;
+}
+
+.noticias-grade .noticia figcaption {
+    color: #294536;
+}
+
+/* Jogadores */
+figure.fotoPessoa {
+    border: 1px solid rgba(52, 115, 74, 0.3);
+    border-radius: 16px;
+    background-color: #edf4ec;
+    box-shadow: 0 4px 14px rgba(18, 53, 35, 0.1);
+}
+
+h3.nome-jogador {
+    color: #245c3d;
+}
+
+/* Treinos */
+.treinos li {
+    width: 100%;
+    margin-left: 0;
+    padding: 18px;
+    border-left: 4px solid #34734a;
+    border-radius: 8px;
+    background-color: rgba(52, 115, 74, 0.12);
+    color: #294536;
+}
+
+.treinos .titulo-treino {
+    color: #245c3d;
+}
+
+/* Links do rodapé */
+footer.rodape a {
+    color: #587b8b;
+}
+
+footer.rodape a:hover {
+    color: #c85e2d;
+}
