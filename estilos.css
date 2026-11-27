@@ -284,6 +284,7 @@ footer.rodape {
     padding: 10px 0;
     position: relative;
     width: 100%;
+    border-top: #c85e2d 4px solid;
 }
 /*Noticias*/
 .noticias-grade {
